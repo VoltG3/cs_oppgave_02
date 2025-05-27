@@ -2,6 +2,23 @@ namespace cs_oppgave_02;
 
 class Collections
 {
+    public static void TextString()
+    {
+        //char temp = "* Unknown!"[0];
+        //Console.WriteLine($"temp " + $"{ temp }");
+
+        string hello = "* # ¤ % & ? !";
+        char firstChar = hello[0];
+        char lastChar = hello[^1];
+        string space = $"{(char)160}";
+        
+        hello = "Hello World!";
+        
+        string message = firstChar + space + hello + space + lastChar;
+        
+        Console.WriteLine($"message " + $"{ message }");
+    }
+    
     // Add missing numbers One-By-One: 5, 6, 7
     public static IEnumerable<int> AddMissingNumbers()
     {
