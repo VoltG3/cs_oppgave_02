@@ -2,6 +2,28 @@ namespace cs_oppgave_02;
 
 class Collections
 {
+    public static void ienumerable()
+    {
+        List<int> numbersList0 = [];
+        List<int> numbersList1 = [ 8, 4, 2];
+        List<int> numbersList2 = [ 1, 10 ];
+        List<int> numbersList3 = [ 9, 3];
+
+        var finalList = numbersList0 
+            .Concat(numbersList1)
+            .Concat(numbersList2)
+            .Concat(numbersList3)
+            .OrderBy(num => num)
+            .ToList(); // ?
+        
+        var actualFinalList = finalList.ToList();
+        
+        foreach (var item in actualFinalList)
+        {
+            Console.WriteLine($"sortedNumberList[{item}] " + $"{ item }");
+        }
+    }
+    
     public static void namesDictionary()
     { 
         
