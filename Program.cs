@@ -4,7 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Collections.TextString();
+        TextFormat.NumberFormat();
+        //Collections.TextString();
         //Collections.ienumerable();
         //Collections.namesDictionary();
         //Collections.NumberList();
