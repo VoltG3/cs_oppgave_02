@@ -3,6 +3,31 @@ namespace cs_oppgave_02;
 
 class TextFormat
 {
+    public static void StringFormat()
+    {
+        // first
+        int tmp01 = 2025;
+        string tmp02 = "Hello World!";
+        string txt = string.Format("Hello World! {0}", tmp01);
+        Console.WriteLine(txt);
+        
+        // second
+        txt = "a";
+        Console.WriteLine(txt.PadLeft(10, '-'));
+        Console.WriteLine(txt.PadRight(10, '-'));
+        
+        txt = "ABCDFG";
+        Console.WriteLine(txt.PadLeft(10, '-'));
+        Console.WriteLine(txt.PadRight(10, '-'));
+        
+        // third
+        string[] temporary = {"first", "second", "third"};
+        foreach (var item in temporary)
+        {
+            Console.WriteLine(item);
+        }
+        Console.WriteLine(string.Join(", ", temporary));
+    }
     public static void DateFormat()
     {
         DateTime tmp01 = DateTime.Now;
