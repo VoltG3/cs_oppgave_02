@@ -2,17 +2,30 @@ namespace cs_oppgave_02;
 
 class Collections
 {
+    // Add missing numbers One-By-One: 5, 6, 7
+    public static IEnumerable<int> AddMissingNumbers()
+    {
+        for (int i = 5; i < 7; i++)
+        {
+            Console.WriteLine($"Prepare Missing Number " + $"{ i }");
+            yield return i;
+            Console.WriteLine($"Missing Number Added " + $"{ i }");
+        }
+    }
+    
     public static void ienumerable()
     {
         List<int> numbersList0 = [];
         List<int> numbersList1 = [ 8, 4, 2];
         List<int> numbersList2 = [ 1, 10 ];
         List<int> numbersList3 = [ 9, 3];
-
+        
+        // Assembly and sort numbers Array
         var finalList = numbersList0 
             .Concat(numbersList1)
             .Concat(numbersList2)
             .Concat(numbersList3)
+            .Concat(AddMissingNumbers())
             .OrderBy(num => num)
             .ToList(); // ?
         
