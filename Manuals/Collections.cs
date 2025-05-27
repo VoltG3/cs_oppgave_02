@@ -2,6 +2,23 @@ namespace cs_oppgave_02;
 
 class Collections
 {
+    public static void namesDictionary()
+    { 
+        
+        //var namesDictionary = new Dictionary<string, string>();
+        Dictionary<string, string> namesDictionary = new()
+        {
+            {"hdd","hard disk driver"}
+        };
+        namesDictionary.Add("ssd", "solid state disk driver");
+        
+        Console.WriteLine($"namesDictionary.length " + $"{ namesDictionary.Count }");
+        foreach (var item in namesDictionary)
+        {
+            Console.WriteLine($"namesDictionary[{item.Key}] " + $"{ item.Value }");
+        }
+    }
+    
     public static void NumberList()
     {
         List<int> numberList = [];

@@ -4,7 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Collections.NumberList();
+        Collections.namesDictionary();
+        //Collections.NumberList();
         //Collections.NumberArray();
     }
 }
