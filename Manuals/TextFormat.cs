@@ -27,6 +27,23 @@ class TextFormat
             Console.WriteLine(item);
         }
         Console.WriteLine(string.Join(", ", temporary));
+        
+        // forth
+        string world1 = "           hello vorld1";
+        Console.WriteLine(world1.Trim().ToUpper());
+        
+        string world2 = world1.Trim().ToLower();
+        if (world2.Contains("vorld"))
+        {
+            string newWorld2 = world2.Replace("vorld", "world");
+            Console.WriteLine(newWorld2);
+        }
+        
+        // fifth
+        string someText = "### someText";
+        string del = someText.Substring(4, 8);
+        Console.WriteLine(del);
+        
     }
     public static void DateFormat()
     {
