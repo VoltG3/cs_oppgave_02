@@ -4,7 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        TextFormat.StringFormat();
+        UserInput.NumberInput();
+        //TextFormat.StringFormat();
         //TextFormat.DateFormat();
         //TextFormat.NumberFormat();
         //Collections.TextString();
