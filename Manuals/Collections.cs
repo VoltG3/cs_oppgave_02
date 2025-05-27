@@ -30,7 +30,7 @@ class Collections
         }
     }
     
-    public static void ienumerable()
+    public static void IEnumerable()
     {
         List<int> numbersList0 = [];
         List<int> numbersList1 = [ 8, 4, 2];
@@ -54,7 +54,7 @@ class Collections
         }
     }
     
-    public static void namesDictionary()
+    public static void NamesDictionary()
     { 
         
         //var namesDictionary = new Dictionary<string, string>();

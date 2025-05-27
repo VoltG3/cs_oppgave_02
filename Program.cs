@@ -4,13 +4,14 @@ class Program
 {
     static void Main(string[] args)
     {
-        UserInput.NumberInput();
+        // Manuals
+        //UserInput.NumberInput();
         //TextFormat.StringFormat();
         //TextFormat.DateFormat();
         //TextFormat.NumberFormat();
         //Collections.TextString();
-        //Collections.ienumerable();
-        //Collections.namesDictionary();
+        //Collections.IEnumerable();
+        //Collections.NamesDictionary();
         //Collections.NumberList();
         //Collections.NumberArray();
     }
