@@ -1,8 +1,8 @@
 namespace cs_oppgave_02;
 
-public class Check
+public class Validation
 {
-    public static bool Validation(
+    public static bool Values(
         string targetDay,
         string targetMonth, 
         string targetYear,
@@ -16,31 +16,31 @@ public class Check
         // ###############
         if (!int.TryParse(targetDay, out int dayValue))
         {
-            Messanger.Error(Messanger.ErrorType.IsNum, targetDay);
+            ErrorMessages.Error(ErrorMessages.ErrorType.IsNum, targetDay);
             return false;
         }
     
         if (!int.TryParse(targetMonth, out int monthValue))
         {
-            Messanger.Error(Messanger.ErrorType.IsNum, targetMonth);
+            ErrorMessages.Error(ErrorMessages.ErrorType.IsNum, targetMonth);
             return false;
         }
 
         if (!int.TryParse(targetYear, out int yearValue))
         {
-            Messanger.Error(Messanger.ErrorType.IsNum, targetYear);
+            ErrorMessages.Error(ErrorMessages.ErrorType.IsNum, targetYear);
             return false;
         }
         
         if (!int.TryParse(targetHour, out int hourValue))
         {
-            Messanger.Error(Messanger.ErrorType.IsNum, targetHour);
+            ErrorMessages.Error(ErrorMessages.ErrorType.IsNum, targetHour);
             return false;
         }
         
         if (!int.TryParse(targetMinute, out int minuteValue))
         {
-            Messanger.Error(Messanger.ErrorType.IsNum, targetMinute);
+            ErrorMessages.Error(ErrorMessages.ErrorType.IsNum, targetMinute);
             return false;
         }
         
@@ -50,31 +50,31 @@ public class Check
 
         if (dayValue > 31 || dayValue < 1)
         {
-            Messanger.Error(Messanger.ErrorType.Day, targetDay);
+            ErrorMessages.Error(ErrorMessages.ErrorType.Day, targetDay);
             isValid = false;    
         }
         
         if (monthValue > 12 || monthValue < 1)
         {
-            Messanger.Error(Messanger.ErrorType.Month, targetMonth);
+            ErrorMessages.Error(ErrorMessages.ErrorType.Month, targetMonth);
             isValid = false;
         }
 
         if (yearValue > 2025 || yearValue < 0)
         {
-            Messanger.Error(Messanger.ErrorType.Year, targetYear);
+            ErrorMessages.Error(ErrorMessages.ErrorType.Year, targetYear);
             isValid = false;   
         }
         
         if (hourValue > 24 || hourValue < 0)
         {
-            Messanger.Error(Messanger.ErrorType.Hour, targetHour);
+            ErrorMessages.Error(ErrorMessages.ErrorType.Hour, targetHour);
             isValid = false;
         }
         
         if (minuteValue > 59 || minuteValue < 0)
         {
-            Messanger.Error(Messanger.ErrorType.Minute, targetMinute);
+            ErrorMessages.Error(ErrorMessages.ErrorType.Minute, targetMinute);
             isValid = false;
         }
         

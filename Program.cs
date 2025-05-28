@@ -62,7 +62,7 @@ class Program
         string customMonth = "7";
         string customYear = "2025";
 
-        if (Check.Validation( customDay, customMonth, customYear, customHour, customMinute))
+        if (Validation.Values( customDay, customMonth, customYear, customHour, customMinute))
         {
             DateTime assemblyDate = new DateTime(
                 int.Parse(customYear), 

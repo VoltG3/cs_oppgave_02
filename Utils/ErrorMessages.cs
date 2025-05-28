@@ -1,6 +1,6 @@
 namespace cs_oppgave_02;
 
-public class Messanger
+public class ErrorMessages
 {
     public enum ErrorType
     {

@@ -2,8 +2,6 @@ namespace  cs_oppgave_02;
 
 public class TextFormat
 {
-    //
-    
     public static string Border(int count)
     {
         var line = "";
