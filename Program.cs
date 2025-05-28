@@ -62,7 +62,17 @@ class Program
                 switch (options[selectedIndex])
                 {
                     case "System Date":
-                        Console.WriteLine("System Date");
+                        string systemDay = DateTime.Now.Day.ToString();
+                        string systemMonth = DateTime.Now.Month.ToString();
+                        string systemYear = DateTime.Now.Year.ToString();
+                        string systemHour = DateTime.Now.Hour.ToString();
+                        string systemMinute = DateTime.Now.Minute.ToString();
+
+                        if (Validation.Values(systemDay, systemMonth, systemYear, systemHour, systemMinute))
+                        {
+                            TextFormat.Space(1);
+                            TextPrinter.Print(systemDay, systemMonth, systemYear, systemHour, systemMinute);
+                        }
                         break;
 
                     case "Random Date":
@@ -155,21 +165,6 @@ class Program
         {
             TextPrinter.Print(customDay, customMonth, customYear, customHour, customMinute);
         }
-        
-        
-       
-        
-        // System Date
-        Console.WriteLine($"{ TextFormat.Border(3) } Date System");
-        string systemHour = DateTime.Now.Hour.ToString();
-        string systemMinute = DateTime.Now.Minute.ToString();
-        string systemMonth = DateTime.Now.Month.ToString();
-        string systemYear = DateTime.Now.Year.ToString();
-        
-        Console.WriteLine($"{ TextFormat.Border(4) }" + 
-                          $"{ "Good" }" + 
-                          $"{ (char)160 }{ Repository.GetSeason(int.Parse(systemMonth))}" +
-                          $"{ (char)160 }{ Repository.GetChronophase(int.Parse(systemHour))}");
         
     }
 }
