@@ -1,7 +1,7 @@
 namespace cs_oppgave_02;
 
 
-class TextFormat
+class TextFormating
 {
     public static void StringFormat()
     {
