@@ -26,6 +26,43 @@ class Program
         Console.WriteLine($"{ TextFormat.Border(3) } User Date");
         TextFormat.Space(1);
         
+        string[] options = { "Sytem Date", "Random Date", "User Input", "PreDefined Date", "Exit" };
+        int selectedIndex = 0;
+
+        ConsoleKeyInfo key;
+
+        do
+        {
+            Console.Clear();
+            Console.WriteLine("Menu\n");
+
+            for (int i = 0; i < options.Length; i++)
+            {
+                if (i == selectedIndex)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine($"> {options[i]}");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    Console.WriteLine($"  {options[i]}");
+                }
+            }
+
+            key = Console.ReadKey(true);
+
+            if (key.Key == ConsoleKey.UpArrow)
+            {
+                selectedIndex = (selectedIndex - 1 + options.Length) % options.Length;
+            }
+            else if (key.Key == ConsoleKey.DownArrow)
+            {
+                selectedIndex = (selectedIndex + 1) % options.Length;
+            }
+
+        } while (key.Key != ConsoleKey.Enter);
+        
         // System Date
         
         //DateTime tmp01 = DateTime.Now;
