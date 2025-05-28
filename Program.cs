@@ -86,5 +86,17 @@ class Program
                           $"{ "Good" }" + 
                           $"{ (char)160 }{ Repository.Season(int.Parse(randomMonth))}" +
                           $"{ (char)160 }{ Repository.DayTime(int.Parse(randomHour))}");
+        
+        // System Date
+        Console.WriteLine($"{ TextFormat.Border(3) } Date System");
+        string systemHour = DateTime.Now.Hour.ToString();
+        string systemMinute = DateTime.Now.Minute.ToString();
+        string systemMonth = DateTime.Now.Month.ToString();
+        
+        Console.WriteLine($"{ TextFormat.Border(4) }" + 
+                          $"{ "Good" }" + 
+                          $"{ (char)160 }{ Repository.Season(int.Parse(systemMonth))}" +
+                          $"{ (char)160 }{ Repository.DayTime(int.Parse(systemHour))}");
+        
     }
 }
