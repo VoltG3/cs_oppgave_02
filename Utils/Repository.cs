@@ -102,4 +102,43 @@ public class Repository
         
         return Action[actionCode];
     }
+    
+    private static readonly Dictionary<string, (int Month, int Day)> SolarEvents = new()
+    {
+        { $"{ TextColor.Color.BL_B }Spring Equinox{ TextColor.Color.RS }", (3, 20) },
+        { $"{ TextColor.Color.BL_B }Summer Solstice{ TextColor.Color.RS }", (6, 21) },
+        { $"{ TextColor.Color.BL_B }Autumn Equinox{ TextColor.Color.RS }", (9, 23) },
+        { $"{ TextColor.Color.BL_B }Winter Solstice{ TextColor.Color.RS }", (12, 21) }
+    };
+    
+    public static string GetNextSolarEvent(int currentDay, int currentMonth, int currentYear)
+    {
+        DateTime now = new DateTime(currentYear, currentMonth, currentDay);
+
+        var sortedEvents = SolarEvents
+            .Select(e => new
+            {
+                Name = e.Key,
+                Date = new DateTime(currentYear, e.Value.Month, e.Value.Day)
+            })
+            .OrderBy(e => e.Date)
+            .ToList();
+
+        foreach (var ev in sortedEvents)
+        {
+            if (ev.Date >= now)
+                return ev.Name;
+        }
+        
+        var nextYearEvent = SolarEvents
+            .Select(e => new
+            {
+                Name = e.Key,
+                Date = new DateTime(currentYear + 1, e.Value.Month, e.Value.Day)
+            })
+            .OrderBy(e => e.Date)
+            .First();
+
+        return nextYearEvent.Name;
+    }
 }

@@ -24,10 +24,18 @@ public class TextPrinter
         Console.WriteLine($"{ TextFormat.Border(3) }" +
                           $"{ (char)160 }{ Repository.GetSeason(int.Parse(targetMonth))}" +
                           $"{ (char)160 }{ Repository.GetPeriod(int.Parse(targetYear))}" +
-                          $"{ (char)160 }{ TextColor.Color.GR_B }in Europe{ TextColor.Color.RS }");
+                          $"{ (char)160 }{ TextColor.Color.GR_B }in Europe{ TextColor.Color.YL_B }");
             
         Console.WriteLine($"{ TextFormat.Border(4) }" +
                           $"{ TextColor.Color.YL_B }Topics to explore:{ (char)160 }{ TextColor.Color.RS }" +
                           $"{ Repository.GetAction( int.Parse(targetYear) )}");
+        
+        Console.WriteLine($"{ TextFormat.Border(11) }" +
+                          $"{ TextColor.Color.YL_B }{"Next event:"}{ TextColor.Color.YL_B }" +
+                          $"{ (char)160 }{ Repository.GetNextSolarEvent(
+                              int.Parse(targetDay), 
+                              int.Parse(targetMonth), 
+                              int.Parse(targetYear))
+                          }");
     }
 }
