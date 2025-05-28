@@ -90,7 +90,38 @@ class Program
                         break;
 
                     case "User Input":
-                        Console.Write("User Input");
+                        TextFormat.Space(1);
+                        
+                        Console.Write($"{ TextFormat.Border(3) }{ TextColor.Color.BL_B } Input Day -> { TextColor.Color.RS }");
+                        Console.Write($"{TextColor.Color.YL_B }");
+                            string customDay = Console.ReadLine();
+                        Console.Write($"{ TextColor.Color.RS }");
+                        
+                        Console.Write($"{ TextFormat.Border(3) }{ TextColor.Color.BL_B } Input Month -> { TextColor.Color.RS }");
+                        Console.Write($"{TextColor.Color.YL_B }");
+                            string customMonth = Console.ReadLine();
+                        Console.Write($"{ TextColor.Color.RS }");
+                        
+                        Console.Write($"{ TextFormat.Border(3) }{ TextColor.Color.BL_B } Input Year -> { TextColor.Color.RS }");
+                        Console.Write($"{TextColor.Color.YL_B }");
+                            string customYear = Console.ReadLine();
+                        Console.Write($"{ TextColor.Color.RS }");
+                        
+                        Console.Write($"{ TextFormat.Border(3) }{ TextColor.Color.BL_B } Input Hour -> { TextColor.Color.RS }");
+                        Console.Write($"{TextColor.Color.YL_B }");
+                            string customHour = Console.ReadLine();
+                        Console.Write($"{ TextColor.Color.RS }");
+                        
+                        Console.Write($"{ TextFormat.Border(3) }{ TextColor.Color.BL_B } Input Minute -> { TextColor.Color.RS }");
+                        Console.Write($"{TextColor.Color.YL_B }");
+                            string customMinute = Console.ReadLine();
+                        Console.Write($"{ TextColor.Color.RS }");
+                        
+                        if (Validation.Values(customDay, customMonth, customYear, customHour, customMinute))
+                        {
+                            TextFormat.Space(1);
+                            TextPrinter.Print(customDay, customMonth, customYear, customHour, customMinute);
+                        }
                         break;
 
                     case "PreDefined":
@@ -123,48 +154,5 @@ class Program
         }
         
         Console.Clear();
-        
-        // System Date
-        
-        //DateTime tmp01 = DateTime.Now;
-        //string t = tmp01.ToString("dd-MM-yyyy HH:mm:ss");
-        //Console.WriteLine($"System Date {t}");
-        
-        //int hours = tmp01.Hour; 
-        //int minutes = tmp01.Minute;
-            //string formattedHour = tmp01.ToString("HH");
-            //string formattedMinute = tmp01.ToString("mm");
-        
-            //Console.WriteLine($"H {formattedHour} M {formattedMinute}");
-            //TextFormat.Space(1);
-        
-        //Console.WriteLine($"{ TextFormat.Border(3) } Custom HH:mm");
-        //Console.Write($"{ TextFormat.Border(3) } Input HH -> ");
-        //string customHour = Console.ReadLine();
-        //string customHour = "23";
-        
-        //Console.Write($"{ TextFormat.Border(3) } Input mm -> ");
-        //string customMinute = Console.ReadLine();
-        //string customMinute = "59";
-
-        //string customMonth = "7";
-        //Console.WriteLine($"date{tmp01:T}");
-        //Console.WriteLine($"Length { tmp01.ToString().Length }");
-        
-        
-        // Custom Date
-        //Console.WriteLine($"{ TextFormat.Border(3) } Date Custom");
-        
-        string customDay = "30";
-        string customMonth = "7";
-        string customYear = "2025";
-        string customHour = "17";
-        string customMinute = "43";
-
-        if (Validation.Values(customDay, customMonth, customYear, customHour, customMinute))
-        {
-            TextPrinter.Print(customDay, customMonth, customYear, customHour, customMinute);
-        }
-        
     }
 }
