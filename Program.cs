@@ -28,45 +28,46 @@ class Program
         
         // System Date
         
-        DateTime tmp01 = DateTime.Now;
-        string t = tmp01.ToString("dd-MM-yyyy HH:mm:ss");
-        Console.WriteLine($"System Date {t}");
+        //DateTime tmp01 = DateTime.Now;
+        //string t = tmp01.ToString("dd-MM-yyyy HH:mm:ss");
+        //Console.WriteLine($"System Date {t}");
         
         //int hours = tmp01.Hour; 
         //int minutes = tmp01.Minute;
-        string formattedHour = tmp01.ToString("HH");
-        string formattedMinute = tmp01.ToString("mm");
+            //string formattedHour = tmp01.ToString("HH");
+            //string formattedMinute = tmp01.ToString("mm");
         
-        Console.WriteLine($"H {formattedHour} M {formattedMinute}");
-        TextFormat.Space(1);
+            //Console.WriteLine($"H {formattedHour} M {formattedMinute}");
+            //TextFormat.Space(1);
         
-        Console.WriteLine($"{ TextFormat.Border(3) } Custom HH:mm");
+        //Console.WriteLine($"{ TextFormat.Border(3) } Custom HH:mm");
         //Console.Write($"{ TextFormat.Border(3) } Input HH -> ");
         //string customHour = Console.ReadLine();
-        string customHour = "23";
+        //string customHour = "23";
         
         //Console.Write($"{ TextFormat.Border(3) } Input mm -> ");
         //string customMinute = Console.ReadLine();
-        string customMinute = "59";
+        //string customMinute = "59";
 
+        //string customMonth = "7";
+        
+        Console.WriteLine($"{ TextFormat.Border(3) } Date Custom");
+        string customHour = "23";
+        string customMinute = "59";
         string customMonth = "7";
 
-        if (Check.IsNumber(customHour) && Check.IsHour(customHour))
+        if (Check.IsNumber(customHour) && Check.IsHour(customHour) && 
+            Check.IsNumber(customMinute) && Check.IsMinute(customMinute) && 
+            Check.IsNumber(customMonth) && Check.IsMonth(customMonth))
         {
-            Console.WriteLine($"true Hours {customHour}");
+            Console.Write($"{ TextFormat.Border(3) } true");
+            Console.Write($" HH { customHour }");
+            Console.Write($" mm { customMinute }");
+            Console.Write($" MM { customMonth } \n");
         }
 
-        if (Check.IsNumber(customMinute) && Check.IsMinute(customMinute))
-        {
-            Console.WriteLine($"true Minutes {customMinute}");
-        }
-
-        if (Check.IsNumber(customMonth) && Check.IsMonth(customMonth))
-        {
-            Console.WriteLine($"true Months {customMonth}");
-        }
         
-        Console.WriteLine($"{ TextFormat.Border(3) }" + 
+        Console.WriteLine($"{ TextFormat.Border(4) }" + 
                           $"{ "Good" }" + 
                           $"{ (char)160 }{ Repository.Season(int.Parse(customMonth))}" +
                           $"{ (char)160 }{ Repository.DayTime(int.Parse(customHour))}");
