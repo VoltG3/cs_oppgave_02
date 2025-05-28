@@ -5,10 +5,11 @@ public class Messanger
     public enum ErrorType
     {
         IsNum,
+        Day,
+        Month,
+        Year,
         Hour,
         Minute,
-        Month,
-        Year
     }
     
     public static void Error(ErrorType errorType, string falseValue)
@@ -16,10 +17,11 @@ public class Messanger
         string message = errorType switch
         {
             ErrorType.IsNum => $"Invalid var - not a number :: { falseValue }",
-            ErrorType.Hour => $"Invalid var - hours out of range :: { falseValue }",
-            ErrorType.Minute => $"Invalid var - minutes out of range :: { falseValue }",
+            ErrorType.Day => $"Invalid var - day out of range :: { falseValue }",
             ErrorType.Month => $"Invalid var - month out of range :: { falseValue }",
             ErrorType.Year => $"Invalid var - year out of range :: { falseValue }",
+            ErrorType.Hour => $"Invalid var - hours out of range :: { falseValue }",
+            ErrorType.Minute => $"Invalid var - minutes out of range :: { falseValue }",
             _ => "Unknown error"
         };
         

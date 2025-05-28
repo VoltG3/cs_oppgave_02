@@ -4,10 +4,10 @@ public class Repository
 {
     private static readonly Dictionary<string, string> Seasons = new()
     {
-        { "wr", "The cold winds of winter blow through the age of" },
-        { "sg", "The blossoms of spring awaken the spirit of" },
-        { "sr", "The golden sun of summer shines over the enduring age of" },
-        { "an", "The falling leaves of autumn whisper through the legacy of" },
+        { "wr", $"{ TextColor.Color.GR_B }The cold winds of { TextColor.Color.YL_B }winter { TextColor.Color.GR_B }blow through the age of" },
+        { "sg", $"{ TextColor.Color.GR_B }The blossoms of { TextColor.Color.YL_B }spring { TextColor.Color.GR_B }awaken the spirit of" },
+        { "sr", $"{ TextColor.Color.GR_B }The golden sun of { TextColor.Color.YL_B }summer { TextColor.Color.GR_B }shines over the enduring age of" },
+        { "an", $"{ TextColor.Color.GR_B }The falling leaves of { TextColor.Color.YL_B }autumn { TextColor.Color.GR_B }whisper through the legacy of" },
         { "u", "Unknown season" }
     };
     
@@ -49,13 +49,13 @@ public class Repository
 
     private static readonly Dictionary<string, string> Period = new()
     {
-        {"ca", "Classical Antiquity"},
-        {"m", "Middle Ages"},
-        {"va", "Viking Age"},
-        {"r", "Renaissance"},
-        {"em", "Early Modern Period"},
-        {"ma", "Modern Era"},
-        {"de", "Digital Era"}
+        {"ca", $"{ TextColor.Color.YL_B }Classical Antiquity{ TextColor.Color.RS }"},
+        {"m", $"{ TextColor.Color.YL_B }Middle Ages{ TextColor.Color.RS }"},
+        {"va", $"{ TextColor.Color.YL_B }Viking Age{ TextColor.Color.RS }"},
+        {"r", $"{ TextColor.Color.YL_B }Renaissance{ TextColor.Color.RS }"},
+        {"em", $"{ TextColor.Color.YL_B }Early Modern Period{ TextColor.Color.RS }"},
+        {"ma", $"{ TextColor.Color.YL_B }Modern Era{ TextColor.Color.RS }"},
+        {"de", $"{ TextColor.Color.YL_B }Digital Era{ TextColor.Color.RS }"}
     };
 
     public static string GetPeriod(int year)
@@ -77,13 +77,13 @@ public class Repository
 
     private static readonly Dictionary<string, string> Action = new()
     {
-        { "aca", "Explore Greek philosophy, Roman legions, and the rise of empires" },
-        { "am", "Navigate feudal kingdoms, crusader paths, and church power" },
-        { "ava", "Set sail on Norse raids, trade routes, and cultural encounters" },
-        { "ar", "Discover artistic rebirth, scientific revolutions, and humanism" },
-        { "aem", "Engage in industrial growth, global empires, and Enlightenment" },
-        { "ama", "Witness world wars, technological booms, and the rise of nations" },
-        { "ade", "Enter cyberspace, AI evolution, and the data-driven world" }
+        { "aca", $"{ TextColor.Color.GR }Explore Greek philosophy, Roman legions, and the rise of empires{ TextColor.Color.RS }" },
+        { "am", $"{ TextColor.Color.GR }Navigate feudal kingdoms, crusader paths, and church power{ TextColor.Color.RS }" },
+        { "ava", $"{ TextColor.Color.GR }Set sail on Norse raids, trade routes, and cultural encounters{ TextColor.Color.RS }" },
+        { "ar", $"{ TextColor.Color.GR }Discover artistic rebirth, scientific revolutions, and humanism{ TextColor.Color.RS }" },
+        { "aem", $"{ TextColor.Color.GR }Engage in industrial growth, global empires, and Enlightenment{ TextColor.Color.RS }" },
+        { "ama", $"{ TextColor.Color.GR }Witness world wars, technological booms, and the rise of nations{ TextColor.Color.RS }" },
+        { "ade", $"{ TextColor.Color.PR }Enter cyberspace, AI evolution, and the data-driven world{ TextColor.Color.RS }" }
     };
     
     public static string GetAction(int year)
