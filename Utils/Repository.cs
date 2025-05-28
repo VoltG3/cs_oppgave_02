@@ -77,13 +77,13 @@ public class Repository
 
     private static readonly Dictionary<string, string> Action = new()
     {
-        { "aca", $"{ TextColor.Color.GR }Explore Greek philosophy, Roman legions, and the rise of empires{ TextColor.Color.RS }" },
-        { "am", $"{ TextColor.Color.GR }Navigate feudal kingdoms, crusader paths, and church power{ TextColor.Color.RS }" },
-        { "ava", $"{ TextColor.Color.GR }Set sail on Norse raids, trade routes, and cultural encounters{ TextColor.Color.RS }" },
-        { "ar", $"{ TextColor.Color.GR }Discover artistic rebirth, scientific revolutions, and humanism{ TextColor.Color.RS }" },
-        { "aem", $"{ TextColor.Color.GR }Engage in industrial growth, global empires, and Enlightenment{ TextColor.Color.RS }" },
-        { "ama", $"{ TextColor.Color.GR }Witness world wars, technological booms, and the rise of nations{ TextColor.Color.RS }" },
-        { "ade", $"{ TextColor.Color.PR }Enter cyberspace, AI evolution, and the data-driven world{ TextColor.Color.RS }" }
+        { "aca", $"{ TextColor.Color.PR_B }Explore Greek philosophy, Roman legions, and the rise of empires{ TextColor.Color.RS }" },
+        { "am", $"{ TextColor.Color.PR_B }Navigate feudal kingdoms, crusader paths, and church power{ TextColor.Color.RS }" },
+        { "ava", $"{ TextColor.Color.PR_B }Set sail on Norse raids, trade routes, and cultural encounters{ TextColor.Color.RS }" },
+        { "ar", $"{ TextColor.Color.PR_B }Discover artistic rebirth, scientific revolutions, and humanism{ TextColor.Color.RS }" },
+        { "aem", $"{ TextColor.Color.PR_B }Engage in industrial growth, global empires, and Enlightenment{ TextColor.Color.RS }" },
+        { "ama", $"{ TextColor.Color.PR_B }Witness world wars, technological booms, and the rise of nations{ TextColor.Color.RS }" },
+        { "ade", $"{ TextColor.Color.PR_B }Enter cyberspace, AI evolution, and the data-driven world{ TextColor.Color.RS }" }
     };
     
     public static string GetAction(int year)

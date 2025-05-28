@@ -19,44 +19,46 @@ class Program
 
         Console.OutputEncoding = System.Text.Encoding.UTF8;
         Console.Clear();
-        TextFormat.Space(1);
         
-        string[] options = { "System Date", "Random Date", "User Input", "PreDefined Date", "Exit" };
+        string[] options = { "System Date", "Random Date", "User Input", "PreDefined", "Exit" };
         int selectedIndex = 0;
         bool exitSelected = false;
 
         while (!exitSelected)
         {
             Console.Clear();
+            TextFormat.Space(1);
+            Console.WriteLine($"{ TextFormat.Border(4) }{ TextColor.Color.YL_B }Menu{ TextColor.Color.RS }");
+            Console.WriteLine($"{ TextFormat.Border(4) }{ TextColor.Color.YL_B }{ TextFormat.HorizontalLine(11) }{ TextColor.Color.RS }");
             for (int i = 0; i < options.Length; i++)
             {
                 if (i == selectedIndex)
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine($"> {options[i]}");
+                    Console.WriteLine($"{ TextFormat.Border(2) }> {options[i]}");
                     Console.ResetColor();
                 }
                 else
                 {
-                    Console.WriteLine($"  {options[i]}");
+                    Console.WriteLine($"{ TextFormat.Border(2) }  {options[i]}");
                 }
             }
-
+            Console.WriteLine($"{ TextFormat.Border(4) }{ TextColor.Color.YL_B }{ TextFormat.HorizontalLine(11) }{ TextColor.Color.RS }");
             ConsoleKeyInfo key = Console.ReadKey(true);
 
             if (key.Key == ConsoleKey.UpArrow)
             {
                 selectedIndex = (selectedIndex - 1 + options.Length) % options.Length;
             }
+            
             else if (key.Key == ConsoleKey.DownArrow)
             {
                 selectedIndex = (selectedIndex + 1) % options.Length;
             }
+            
             else if (key.Key == ConsoleKey.Enter)
             {
-                Console.Clear();
-                Console.WriteLine($"{options[selectedIndex]}");
-
+                //Console.WriteLine($"{options[selectedIndex]}");
                 switch (options[selectedIndex])
                 {
                     case "System Date":
@@ -71,8 +73,18 @@ class Program
                         Console.Write("User Input");
                         break;
 
-                    case "PreDefined Date":
-                        Console.Write("PreDefined Date");
+                    case "PreDefined":
+                        string definedDay = "9";
+                        string definedMonth = "11";
+                        string definedYear = "1923";
+                        string definedHour = "17";
+                        string definedMinute = "43";
+
+                        if (Validation.Values(definedDay, definedMonth, definedYear, definedHour, definedMinute))
+                        {
+                            TextFormat.Space(1);
+                            TextPrinter.Print(definedDay, definedMonth, definedYear, definedHour, definedMinute);
+                        }
                         break;
 
                     case "Exit":
@@ -83,7 +95,8 @@ class Program
 
                 if (!exitSelected)
                 {
-                    Console.WriteLine("Press any key to return to menu");
+                    TextFormat.Space(1);
+                    Console.WriteLine($"{ TextFormat.Border(4) }{ TextColor.Color.GR_B }Press any key to return to menu{ TextColor.Color.RS }");
                     Console.ReadKey(true);
                 }
             }
@@ -133,7 +146,6 @@ class Program
             TextPrinter.Print(customDay, customMonth, customYear, customHour, customMinute);
         }
         
-        TextFormat.Space(1);
         
         // Random Date
         Console.WriteLine($"{ TextFormat.Border(3) } Date Random");
