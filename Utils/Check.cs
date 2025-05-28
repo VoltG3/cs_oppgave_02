@@ -2,6 +2,27 @@ namespace cs_oppgave_02;
 
 public class Check
 {
+    public static bool IsMonth(string targetMonth)
+    {
+        bool isMonth;
+        if (int.Parse(targetMonth) > 12 || int.Parse(targetMonth) < 1)
+        {
+            Console.WriteLine($"" +
+                              $"{ TextFormat.Border(4) }" +
+                              $"{ TextColor.Color.RD_B }" +
+                              $"Invalid input - month out of range :: { targetMonth }" +
+                              $"{ TextColor.Color.RS }" +
+                              $"");
+            isMonth = false;
+        }
+        else
+        {
+            isMonth = true;
+        }
+        
+        return isMonth;
+    }
+    
     public static bool IsMinute(string targetMinute)
     {
         bool isMinute;

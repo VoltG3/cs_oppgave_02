@@ -41,13 +41,15 @@ class Program
         TextFormat.Space(1);
         
         Console.WriteLine($"{ TextFormat.Border(3) } Custom HH:mm");
-        //Console.Write($"{ TextFormat.Border() } Input HH -> ");
+        //Console.Write($"{ TextFormat.Border(3) } Input HH -> ");
         //string customHour = Console.ReadLine();
         string customHour = "23";
         
-        //Console.Write($"{ TextFormat.Border() } Input mm -> ");
+        //Console.Write($"{ TextFormat.Border(3) } Input mm -> ");
         //string customMinute = Console.ReadLine();
         string customMinute = "59";
+
+        string customMonth = "7";
 
         if (Check.IsNumber(customHour) && Check.IsHour(customHour))
         {
@@ -58,9 +60,16 @@ class Program
         {
             Console.WriteLine($"true Minutes {customMinute}");
         }
+
+        if (Check.IsNumber(customMonth) && Check.IsMonth(customMonth))
+        {
+            Console.WriteLine($"true Months {customMonth}");
+        }
         
-        Console.WriteLine($"{ TextFormat.Border(3) }{ Repository.DayTime(int.Parse(customHour))}");
-        
+        Console.WriteLine($"{ TextFormat.Border(3) }" + 
+                          $"{ "Good" }" + 
+                          $"{ (char)160 }{ Repository.Season(int.Parse(customMonth))}" +
+                          $"{ (char)160 }{ Repository.DayTime(int.Parse(customHour))}");
         
         //Console.WriteLine($"date{tmp01:T}");
         //Console.WriteLine($"Length { tmp01.ToString().Length }");
