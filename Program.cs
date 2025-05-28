@@ -20,22 +20,14 @@ class Program
         Console.OutputEncoding = System.Text.Encoding.UTF8;
         Console.Clear();
         TextFormat.Space(1);
-
-        Console.WriteLine($"{ TextFormat.Border(3) } System Date");
-        Console.WriteLine($"{ TextFormat.Border(3) } Random Data");
-        Console.WriteLine($"{ TextFormat.Border(3) } User Date");
-        TextFormat.Space(1);
         
-        string[] options = { "Sytem Date", "Random Date", "User Input", "PreDefined Date", "Exit" };
+        string[] options = { "System Date", "Random Date", "User Input", "PreDefined Date", "Exit" };
         int selectedIndex = 0;
+        bool exitSelected = false;
 
-        ConsoleKeyInfo key;
-
-        do
+        while (!exitSelected)
         {
             Console.Clear();
-            Console.WriteLine("Menu\n");
-
             for (int i = 0; i < options.Length; i++)
             {
                 if (i == selectedIndex)
@@ -50,7 +42,7 @@ class Program
                 }
             }
 
-            key = Console.ReadKey(true);
+            ConsoleKeyInfo key = Console.ReadKey(true);
 
             if (key.Key == ConsoleKey.UpArrow)
             {
@@ -60,8 +52,44 @@ class Program
             {
                 selectedIndex = (selectedIndex + 1) % options.Length;
             }
+            else if (key.Key == ConsoleKey.Enter)
+            {
+                Console.Clear();
+                Console.WriteLine($"{options[selectedIndex]}");
 
-        } while (key.Key != ConsoleKey.Enter);
+                switch (options[selectedIndex])
+                {
+                    case "System Date":
+                        Console.WriteLine("System Date");
+                        break;
+
+                    case "Random Date":
+                        Console.WriteLine("Random Date");
+                        break;
+
+                    case "User Input":
+                        Console.Write("User Input");
+                        break;
+
+                    case "PreDefined Date":
+                        Console.Write("PreDefined Date");
+                        break;
+
+                    case "Exit":
+                        Console.WriteLine("Exit");
+                        exitSelected = true;
+                        break;
+                }
+
+                if (!exitSelected)
+                {
+                    Console.WriteLine("Press any key to return to menu");
+                    Console.ReadKey(true);
+                }
+            }
+        }
+        
+        Console.Clear();
         
         // System Date
         
