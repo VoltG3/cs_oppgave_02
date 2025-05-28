@@ -63,8 +63,9 @@ class Program
         if (Check.Validation(customHour, customMinute, customMonth))
         {
             Console.WriteLine($"{ TextFormat.Border(4) }" + 
-                              $"{ (char)160 }{ Repository.Season(int.Parse(customMonth))}" +
-                              $"{ (char)160 }{ Repository.DayTime(int.Parse(customHour))}");
+                              $"{ "Good" }" +
+                              $"{ (char)160 }{ Repository.GetSeason(int.Parse(customMonth))}" +
+                              $"{ (char)160 }{ Repository.GetChronophase(int.Parse(customHour))}");
         }
         
         // Random Date
@@ -74,9 +75,9 @@ class Program
         string randomMonth = RandomGenerator.RND(1, 13);
         
         Console.WriteLine($"{ TextFormat.Border(4) }" + 
-                         // $"{ "Good" }" + 
-                          $"{ (char)160 }{ Repository.Season(int.Parse(randomMonth))}" +
-                          $"{ (char)160 }{ Repository.DayTime(int.Parse(randomHour))}");
+                          $"{ "Good" }" + 
+                          $"{ (char)160 }{ Repository.GetSeason(int.Parse(randomMonth))}" +
+                          $"{ (char)160 }{ Repository.GetChronophase(int.Parse(randomHour))}");
         
         // System Date
         Console.WriteLine($"{ TextFormat.Border(3) } Date System");
@@ -85,9 +86,9 @@ class Program
         string systemMonth = DateTime.Now.Month.ToString();
         
         Console.WriteLine($"{ TextFormat.Border(4) }" + 
-                          //$"{ "Good" }" + 
-                          $"{ (char)160 }{ Repository.Season(int.Parse(systemMonth))}" +
-                          $"{ (char)160 }{ Repository.DayTime(int.Parse(systemHour))}");
+                          $"{ "Good" }" + 
+                          $"{ (char)160 }{ Repository.GetSeason(int.Parse(systemMonth))}" +
+                          $"{ (char)160 }{ Repository.GetChronophase(int.Parse(systemHour))}");
         
     }
 }

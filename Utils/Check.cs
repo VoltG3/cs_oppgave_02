@@ -53,6 +53,7 @@ public class Check
         
         else
         {
+            //
             Console.Write($"{ TextFormat.Border(8) }" +
                           $"{ TextColor.Color.CY_B }");
             Console.Write($" HH { targetHour }");
@@ -63,45 +64,6 @@ public class Check
             isValid = true;
         }
         
-      /*  
-        if (IsNumber(targetHour) && IsHour(targetHour) && 
-            IsNumber(targetMinute) && IsMinute(targetMinute) && 
-            IsNumber(targetMonth) && IsMonth(targetMonth))
-        {
-            Console.Write($"{ TextFormat.Border(8) }" +
-                          $"{ TextColor.Color.CY_B }");
-            Console.Write($" HH { targetHour }");
-            Console.Write($" mm { targetMinute }");
-            Console.Write($" MM { targetMonth } " +
-                          $"{ TextColor.Color.RS }" +
-                          $"\n");
-            isValid = true;
-        }
-        else
-        {
-            isValid = false;
-        }
-       */ 
         return isValid;
-    }
-    
-    public static bool IsNumber(string targetNum)
-    {
-        bool isNumber;
-        if (int.TryParse(targetNum, out int number))
-        {
-            isNumber = true;
-        }
-        else
-        {
-            Console.WriteLine($"" +
-                              $"{ TextFormat.Border(4) }" +
-                              $"{ TextColor.Color.RD_B }" +
-                              $"Invalid input - not a number :: { targetNum }" +
-                              $"{ TextColor.Color.RS }" +
-                              $"");
-            isNumber = false;
-        }
-        return isNumber;
     }
 }
