@@ -8,6 +8,7 @@ public class Messanger
         Hour,
         Minute,
         Month,
+        Year
     }
     
     public static void Error(ErrorType errorType, string falseValue)
@@ -18,6 +19,7 @@ public class Messanger
             ErrorType.Hour => $"Invalid var - hours out of range :: { falseValue }",
             ErrorType.Minute => $"Invalid var - minutes out of range :: { falseValue }",
             ErrorType.Month => $"Invalid var - month out of range :: { falseValue }",
+            ErrorType.Year => $"Invalid var - year out of range :: { falseValue }",
             _ => "Unknown error"
         };
         

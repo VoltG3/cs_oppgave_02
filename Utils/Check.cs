@@ -5,7 +5,8 @@ public class Check
     public static bool Validation(
         string targetHour, 
         string targetMinute, 
-        string targetMonth)
+        string targetMonth, 
+        string targetYear)
     {
         bool isValid;
         
@@ -27,6 +28,12 @@ public class Check
         if (!int.TryParse(targetMonth, out int monthValue))
         {
             Messanger.Error(Messanger.ErrorType.IsNum, targetMonth);
+            return false;
+        }
+
+        if (!int.TryParse(targetYear, out int yearValue))
+        {
+            Messanger.Error(Messanger.ErrorType.IsNum, targetYear);
             return false;
         }
         

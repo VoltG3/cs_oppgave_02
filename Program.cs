@@ -59,20 +59,32 @@ class Program
         string customHour = "17";
         string customMinute = "43";
         string customMonth = "7";
+        string customYear = "2025";
 
-        if (Check.Validation(customHour, customMinute, customMonth))
+        if (Check.Validation(customHour, customMinute, customMonth, customYear))
         {
-            Console.WriteLine($"{ TextFormat.Border(4) }" + 
-                              $"{ "Good" }" +
-                              $"{ (char)160 }{ Repository.GetSeason(int.Parse(customMonth))}" +
+            Console.WriteLine($"{ TextFormat.Border(4) }" +
                               $"{ (char)160 }{ Repository.GetChronophase(int.Parse(customHour))}");
+            
+            Console.WriteLine($"{ TextFormat.Border(4) }" +
+                              $"{ (char)160 }{ Repository.GetSeason(int.Parse(customMonth))}" +
+                              $"{ (char)160 }{ Repository.GetPeriod(int.Parse(customYear))}" +
+                              $"{ (char)160 }{"in Europe."}");
+            
+            Console.WriteLine($"{ TextFormat.Border(4) }" +
+                              $"{ "Topics to explore" }" +
+                              $"{ (char)160 }{ Repository.GetAction( int.Parse(customYear) )}");
+
         }
+        
+        TextFormat.Space(1);
         
         // Random Date
         Console.WriteLine($"{ TextFormat.Border(3) } Date Random");
         string randomHour = RandomGenerator.RND(0, 25);
         string randomMinute = RandomGenerator.RND(0, 60);
         string randomMonth = RandomGenerator.RND(1, 13);
+        string randomYear = RandomGenerator.RND(0000, 2025);
         
         Console.WriteLine($"{ TextFormat.Border(4) }" + 
                           $"{ "Good" }" + 
@@ -84,6 +96,7 @@ class Program
         string systemHour = DateTime.Now.Hour.ToString();
         string systemMinute = DateTime.Now.Minute.ToString();
         string systemMonth = DateTime.Now.Month.ToString();
+        string systemYear = DateTime.Now.Year.ToString();
         
         Console.WriteLine($"{ TextFormat.Border(4) }" + 
                           $"{ "Good" }" + 
