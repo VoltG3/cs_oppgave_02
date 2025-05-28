@@ -50,7 +50,11 @@ class Program
         //string customMinute = "59";
 
         //string customMonth = "7";
+        //Console.WriteLine($"date{tmp01:T}");
+        //Console.WriteLine($"Length { tmp01.ToString().Length }");
         
+        
+        // Custom Date
         Console.WriteLine($"{ TextFormat.Border(3) } Date Custom");
         string customHour = "23";
         string customMinute = "59";
@@ -72,7 +76,15 @@ class Program
                           $"{ (char)160 }{ Repository.Season(int.Parse(customMonth))}" +
                           $"{ (char)160 }{ Repository.DayTime(int.Parse(customHour))}");
         
-        //Console.WriteLine($"date{tmp01:T}");
-        //Console.WriteLine($"Length { tmp01.ToString().Length }");
+        // Random Date
+        Console.WriteLine($"{ TextFormat.Border(3) } Date Random");
+        string randomHour = RandomGenerator.RND(0, 25);
+        string randomMinute = RandomGenerator.RND(0, 60);
+        string randomMonth = RandomGenerator.RND(1, 13);
+        
+        Console.WriteLine($"{ TextFormat.Border(4) }" + 
+                          $"{ "Good" }" + 
+                          $"{ (char)160 }{ Repository.Season(int.Parse(randomMonth))}" +
+                          $"{ (char)160 }{ Repository.DayTime(int.Parse(randomHour))}");
     }
 }
