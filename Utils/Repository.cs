@@ -43,10 +43,10 @@ public class Repository
     {
         Dictionary<string, string> dayTime = new()
         {
-            {"A","Afternoon"},
-            {"E","Evening"},
-            {"M","Morning"},
-            {"N","Night"},
+            {"A","Good Afternoon!"},
+            {"E","Good Evening!"},
+            {"M","Good Morning!"},
+            {"N","Good Night!"},
             {"U", "Unknown day time"}
         };
      

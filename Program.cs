@@ -56,25 +56,16 @@ class Program
         
         // Custom Date
         Console.WriteLine($"{ TextFormat.Border(3) } Date Custom");
-        string customHour = "23";
-        string customMinute = "59";
+        string customHour = "17";
+        string customMinute = "43";
         string customMonth = "7";
 
-        if (Check.IsNumber(customHour) && Check.IsHour(customHour) && 
-            Check.IsNumber(customMinute) && Check.IsMinute(customMinute) && 
-            Check.IsNumber(customMonth) && Check.IsMonth(customMonth))
+        if (Check.Validation(customHour, customMinute, customMonth))
         {
-            Console.Write($"{ TextFormat.Border(3) } true");
-            Console.Write($" HH { customHour }");
-            Console.Write($" mm { customMinute }");
-            Console.Write($" MM { customMonth } \n");
+            Console.WriteLine($"{ TextFormat.Border(4) }" + 
+                              $"{ (char)160 }{ Repository.Season(int.Parse(customMonth))}" +
+                              $"{ (char)160 }{ Repository.DayTime(int.Parse(customHour))}");
         }
-
-        
-        Console.WriteLine($"{ TextFormat.Border(4) }" + 
-                          $"{ "Good" }" + 
-                          $"{ (char)160 }{ Repository.Season(int.Parse(customMonth))}" +
-                          $"{ (char)160 }{ Repository.DayTime(int.Parse(customHour))}");
         
         // Random Date
         Console.WriteLine($"{ TextFormat.Border(3) } Date Random");
@@ -83,7 +74,7 @@ class Program
         string randomMonth = RandomGenerator.RND(1, 13);
         
         Console.WriteLine($"{ TextFormat.Border(4) }" + 
-                          $"{ "Good" }" + 
+                         // $"{ "Good" }" + 
                           $"{ (char)160 }{ Repository.Season(int.Parse(randomMonth))}" +
                           $"{ (char)160 }{ Repository.DayTime(int.Parse(randomHour))}");
         
@@ -94,7 +85,7 @@ class Program
         string systemMonth = DateTime.Now.Month.ToString();
         
         Console.WriteLine($"{ TextFormat.Border(4) }" + 
-                          $"{ "Good" }" + 
+                          //$"{ "Good" }" + 
                           $"{ (char)160 }{ Repository.Season(int.Parse(systemMonth))}" +
                           $"{ (char)160 }{ Repository.DayTime(int.Parse(systemHour))}");
         

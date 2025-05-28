@@ -2,66 +2,87 @@ namespace cs_oppgave_02;
 
 public class Check
 {
-    public static bool IsMonth(string targetMonth)
+    public static bool Validation(
+        string targetHour, 
+        string targetMinute, 
+        string targetMonth)
     {
-        bool isMonth;
-        if (int.Parse(targetMonth) > 12 || int.Parse(targetMonth) < 1)
+        bool isValid;
+        
+        // ###############
+        //  Is it number?
+        // ###############
+        if (!int.TryParse(targetHour, out int hourValue))
         {
-            Console.WriteLine($"" +
-                              $"{ TextFormat.Border(4) }" +
-                              $"{ TextColor.Color.RD_B }" +
-                              $"Invalid input - month out of range :: { targetMonth }" +
-                              $"{ TextColor.Color.RS }" +
-                              $"");
-            isMonth = false;
-        }
-        else
-        {
-            isMonth = true;
+            Messanger.Error(Messanger.ErrorType.IsNum, targetHour);
+            return false;
         }
         
-        return isMonth;
-    }
-    
-    public static bool IsMinute(string targetMinute)
-    {
-        bool isMinute;
-        if (int.Parse(targetMinute) > 59 || int.Parse(targetMinute) < 0)
+        if (!int.TryParse(targetMinute, out int minuteValue))
         {
-            Console.WriteLine($"" +
-                              $"{ TextFormat.Border(4) }" +
-                              $"{ TextColor.Color.RD_B }" +
-                              $"Invalid input - minutes out of range :: { targetMinute }" +
-                              $"{ TextColor.Color.RS }" +
-                              $"");
-            isMinute = false;
+            Messanger.Error(Messanger.ErrorType.IsNum, targetMinute);
+            return false;
+        }
+
+        if (!int.TryParse(targetMonth, out int monthValue))
+        {
+            Messanger.Error(Messanger.ErrorType.IsNum, targetMonth);
+            return false;
+        }
+        
+        // ##################
+        //  Is var in range?
+        // ##################
+        if (hourValue > 24 || hourValue < 0)
+        {
+            Messanger.Error(Messanger.ErrorType.Hour, targetHour);
+            isValid = false;
+        }
+        
+        if (minuteValue > 59 || minuteValue < 0)
+        {
+            Messanger.Error(Messanger.ErrorType.Minute, targetMinute);
+            isValid = false;
+        }
+        
+        if (monthValue > 12 || monthValue < 1)
+        {
+            Messanger.Error(Messanger.ErrorType.Month, targetMonth);
+            isValid = false;
+        }
+        
+        else
+        {
+            Console.Write($"{ TextFormat.Border(8) }" +
+                          $"{ TextColor.Color.CY_B }");
+            Console.Write($" HH { targetHour }");
+            Console.Write($" mm { targetMinute }");
+            Console.Write($" MM { targetMonth } " +
+                          $"{ TextColor.Color.RS }" +
+                          $"\n");
+            isValid = true;
+        }
+        
+      /*  
+        if (IsNumber(targetHour) && IsHour(targetHour) && 
+            IsNumber(targetMinute) && IsMinute(targetMinute) && 
+            IsNumber(targetMonth) && IsMonth(targetMonth))
+        {
+            Console.Write($"{ TextFormat.Border(8) }" +
+                          $"{ TextColor.Color.CY_B }");
+            Console.Write($" HH { targetHour }");
+            Console.Write($" mm { targetMinute }");
+            Console.Write($" MM { targetMonth } " +
+                          $"{ TextColor.Color.RS }" +
+                          $"\n");
+            isValid = true;
         }
         else
         {
-            isMinute = true;
+            isValid = false;
         }
-        return isMinute;
-    }
-    
-    public static bool IsHour(string targetHour)
-    {
-        bool isHour;
-        if (int.Parse(targetHour) > 24 || int.Parse(targetHour) < 0)
-        {
-            Console.WriteLine($"" +
-                              $"{ TextFormat.Border(4) }" +
-                              $"{ TextColor.Color.RD_B }" +
-                              $"Invalid input - hours out of range :: { targetHour }" +
-                              $"{ TextColor.Color.RS }" +
-                              $"");
-            isHour = false;
-        }
-        else
-        {
-            isHour = true;
-        }
-            
-        return isHour;
+       */ 
+        return isValid;
     }
     
     public static bool IsNumber(string targetNum)
