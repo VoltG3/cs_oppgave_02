@@ -80,7 +80,7 @@ class Program
                         string randomMonth = RandomGenerator.RND(1, 13);
                         string randomYear = RandomGenerator.RND(0000, 2025);
                         string randomHour = RandomGenerator.RND(0, 25);
-                        string randomMinute = RandomGenerator.RND(0, 60);
+                        string randomMinute = RandomGenerator.RND(0, 60);  
 
                         if (Validation.Values(randomDay, randomMonth, randomYear, randomHour, randomMinute))
                         {
@@ -108,12 +108,12 @@ class Program
                         Console.Write($"{ TextColor.Color.RS }");
                         
                         Console.Write($"{ TextFormat.Border(3) }{ TextColor.Color.BL_B } Input Hour -> { TextColor.Color.RS }");
-                        Console.Write($"{TextColor.Color.YL_B }");
+                        Console.Write($"{ TextColor.Color.YL_B }");
                             string customHour = Console.ReadLine();
                         Console.Write($"{ TextColor.Color.RS }");
                         
                         Console.Write($"{ TextFormat.Border(3) }{ TextColor.Color.BL_B } Input Minute -> { TextColor.Color.RS }");
-                        Console.Write($"{TextColor.Color.YL_B }");
+                        Console.Write($"{ TextColor.Color.YL_B }");
                             string customMinute = Console.ReadLine();
                         Console.Write($"{ TextColor.Color.RS }");
                         
