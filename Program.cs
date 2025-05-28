@@ -21,9 +21,9 @@ class Program
         Console.Clear();
         TextFormat.Space(1);
 
-        Console.WriteLine($"{ TextFormat.Border() } System Date");
-        Console.WriteLine($"{ TextFormat.Border() } Random Data");
-        Console.WriteLine($"{ TextFormat.Border() } User Date");
+        Console.WriteLine($"{ TextFormat.Border(3) } System Date");
+        Console.WriteLine($"{ TextFormat.Border(3) } Random Data");
+        Console.WriteLine($"{ TextFormat.Border(3) } User Date");
         TextFormat.Space(1);
         
         // System Date
@@ -40,19 +40,27 @@ class Program
         Console.WriteLine($"H {formattedHour} M {formattedMinute}");
         TextFormat.Space(1);
         
-        Console.WriteLine($"{ TextFormat.Border() } Custom HH:mm");
+        Console.WriteLine($"{ TextFormat.Border(3) } Custom HH:mm");
         //Console.Write($"{ TextFormat.Border() } Input HH -> ");
         //string customHour = Console.ReadLine();
         string customHour = "23";
         
         //Console.Write($"{ TextFormat.Border() } Input mm -> ");
         //string customMinute = Console.ReadLine();
-        string customMinute = "61";
+        string customMinute = "59";
 
         if (Check.IsNumber(customHour) && Check.IsHour(customHour))
         {
             Console.WriteLine($"true Hours {customHour}");
         }
+
+        if (Check.IsNumber(customMinute) && Check.IsMinute(customMinute))
+        {
+            Console.WriteLine($"true Minutes {customMinute}");
+        }
+        
+        Console.WriteLine($"{ TextFormat.Border(3) }{ Repository.DayTime(int.Parse(customHour))}");
+        
         
         //Console.WriteLine($"date{tmp01:T}");
         //Console.WriteLine($"Length { tmp01.ToString().Length }");

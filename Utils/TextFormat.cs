@@ -4,10 +4,14 @@ public class TextFormat
 {
     //
     
-    public static string Border()
+    public static string Border(int count)
     {
-        var padding = $"{ (char)160 }{ (char)160 }{ (char)160 }";
-        return padding;
+        var line = "";
+        for (int i = 0; i < count; i++)
+        {
+            line += $"{ (char)160 }";
+        }
+        return line;
     }
     
     public static void Space(int count)

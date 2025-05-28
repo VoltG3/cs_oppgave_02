@@ -5,12 +5,12 @@ public class Check
     public static bool IsMinute(string targetMinute)
     {
         bool isMinute;
-        if (int.Parse(targetMinute) > 60 || int.Parse(targetMinute) < 0)
+        if (int.Parse(targetMinute) > 59 || int.Parse(targetMinute) < 0)
         {
             Console.WriteLine($"" +
-                              $"{ TextFormat.Border() }" +
+                              $"{ TextFormat.Border(4) }" +
                               $"{ TextColor.Color.RD_B }" +
-                              $"[Invalid input] - minutes out of range :: { targetMinute }" +
+                              $"Invalid input - minutes out of range :: { targetMinute }" +
                               $"{ TextColor.Color.RS }" +
                               $"");
             isMinute = false;
@@ -28,9 +28,9 @@ public class Check
         if (int.Parse(targetHour) > 24 || int.Parse(targetHour) < 0)
         {
             Console.WriteLine($"" +
-                              $"{ TextFormat.Border() }" +
+                              $"{ TextFormat.Border(4) }" +
                               $"{ TextColor.Color.RD_B }" +
-                              $"[Invalid input] - hours out of range :: { targetHour }" +
+                              $"Invalid input - hours out of range :: { targetHour }" +
                               $"{ TextColor.Color.RS }" +
                               $"");
             isHour = false;
@@ -53,9 +53,9 @@ public class Check
         else
         {
             Console.WriteLine($"" +
-                              $"{ TextFormat.Border() }" +
+                              $"{ TextFormat.Border(4) }" +
                               $"{ TextColor.Color.RD_B }" +
-                              $"[Invalid input] - not a number :: { targetNum }" +
+                              $"Invalid input - not a number :: { targetNum }" +
                               $"{ TextColor.Color.RS }" +
                               $"");
             isNumber = false;

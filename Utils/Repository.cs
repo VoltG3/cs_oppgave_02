@@ -2,29 +2,40 @@ namespace cs_oppgave_02;
 
 public class Repository
 {
-    /*
     public static string DayTime(int targetHour)
     {
-        string dayTime = "";
-
-        Dictonary<string, string> dayTime = new()
+        Dictionary<string, string> dayTime = new()
         {
-            
+            {"A","Good Afternoon"},
+            {"E","Good Evening"},
+            {"M","Good Morning"},
+            {"N","Good Night"},
+            {"U", "Unknown DayTime"}
         };
-    }
-    */
-    
-    /*
-    Dictionary<string, string> namesDictionary = new()
-    {
-        {"hdd","hard disk driver"}
-    };
-    namesDictionary.Add("ssd", "solid state disk driver");
+     
+        string dayTimeString = "";
         
-    Console.WriteLine($"namesDictionary.length " + $"{ namesDictionary.Count }");
-    foreach (var item in namesDictionary)
-    {
-        Console.WriteLine($"namesDictionary[{item.Key}] " + $"{ item.Value }");
+        if (targetHour >= 12 && targetHour <= 17)
+        {
+            dayTimeString="A";
+        } 
+        else if (targetHour >= 17 && targetHour <= 23)
+        {
+            dayTimeString="E";
+        }
+        else if (targetHour >= 7 && targetHour <= 11)
+        {
+            dayTimeString="M";
+        }
+        else if (targetHour >= 23 && targetHour <= 6)
+        {
+            dayTimeString="N";
+        }
+        else
+        {
+            dayTimeString="U";
+        }
+
+        return dayTime[dayTimeString];
     }
-    */
 }
