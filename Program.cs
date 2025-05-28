@@ -56,39 +56,16 @@ class Program
         
         // Custom Date
         //Console.WriteLine($"{ TextFormat.Border(3) } Date Custom");
-        string customHour = "17";
-        string customMinute = "43";
+        
         string customDay = "30";
         string customMonth = "7";
         string customYear = "2025";
+        string customHour = "17";
+        string customMinute = "43";
 
-        if (Validation.Values( customDay, customMonth, customYear, customHour, customMinute))
+        if (Validation.Values(customDay, customMonth, customYear, customHour, customMinute))
         {
-            DateTime assemblyDate = new DateTime(
-                int.Parse(customYear), 
-                int.Parse(customMonth), 
-                int.Parse(customDay), 
-                int.Parse(customHour), 
-                int.Parse(customMinute), 
-                0);
-            string europeanFormat = assemblyDate.ToString("dd.MM.yyyy HH:mm");
-            
-            Console.WriteLine($"{ TextFormat.Border(3) }" +
-                              $"{ (char)160 }{ TextColor.Color.BL_B }{ Repository.GetChronophase(int.Parse(customHour))}{ TextColor.Color.BL_B }");
-            
-            Console.WriteLine($"{ TextFormat.Border(4) }{ TextColor.Color.BL_B }{ europeanFormat }{ TextColor.Color.BL_B }");
-            
-            TextFormat.Space(1);
-            
-            Console.WriteLine($"{ TextFormat.Border(3) }" +
-                              $"{ (char)160 }{ Repository.GetSeason(int.Parse(customMonth))}" +
-                              $"{ (char)160 }{ Repository.GetPeriod(int.Parse(customYear))}" +
-                              $"{ (char)160 }{ TextColor.Color.GR_B }in Europe{ TextColor.Color.RS }");
-            
-            Console.WriteLine($"{ TextFormat.Border(4) }" +
-                              $"{ TextColor.Color.YL_B }Topics to explore:{ (char)160 }{ TextColor.Color.RS }" +
-                              $"{ Repository.GetAction( int.Parse(customYear) )}");
-
+            TextPrinter.Print(customDay, customMonth, customYear, customHour, customMinute);
         }
         
         TextFormat.Space(1);
