@@ -66,7 +66,17 @@ class Program
                         break;
 
                     case "Random Date":
-                        Console.WriteLine("Random Date");
+                        string randomDay = RandomGenerator.RND(1, 31);
+                        string randomMonth = RandomGenerator.RND(1, 13);
+                        string randomYear = RandomGenerator.RND(0000, 2025);
+                        string randomHour = RandomGenerator.RND(0, 25);
+                        string randomMinute = RandomGenerator.RND(0, 60);
+
+                        if (Validation.Values(randomDay, randomMonth, randomYear, randomHour, randomMinute))
+                        {
+                            TextFormat.Space(1);
+                            TextPrinter.Print(randomDay, randomMonth, randomYear, randomHour, randomMinute);
+                        }
                         break;
 
                     case "User Input":
@@ -147,17 +157,7 @@ class Program
         }
         
         
-        // Random Date
-        Console.WriteLine($"{ TextFormat.Border(3) } Date Random");
-        string randomHour = RandomGenerator.RND(0, 25);
-        string randomMinute = RandomGenerator.RND(0, 60);
-        string randomMonth = RandomGenerator.RND(1, 13);
-        string randomYear = RandomGenerator.RND(0000, 2025);
-        
-        Console.WriteLine($"{ TextFormat.Border(4) }" + 
-                          $"{ "Good" }" + 
-                          $"{ (char)160 }{ Repository.GetSeason(int.Parse(randomMonth))}" +
-                          $"{ (char)160 }{ Repository.GetChronophase(int.Parse(randomHour))}");
+       
         
         // System Date
         Console.WriteLine($"{ TextFormat.Border(3) } Date System");
